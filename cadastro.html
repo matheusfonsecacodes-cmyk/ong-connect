@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/style.css" />
-    <title>Document</title>
+    <title>Cadastro | Pata Viva</title>
   </head>
   <body>
     <header>
@@ -25,8 +25,8 @@
         </p>
 
         <img
-          src="IMG/cão e gato.jpg"
-          alt="cão e gato"
+          src="IMG/cao-e-gato.jpg"
+          alt="Cão e gato juntos representando a proteção animal"
           width="500"
           height="300"
         />
@@ -59,6 +59,175 @@
           <label for="nascimento">Data de nascimento</label>
           <input type="date" id="nascimento" name="nascimento" required />
         </fieldset>
+
+        <fieldset>
+          <legend>Contato</legend>
+
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="seuemail@exemplo.com"
+            required
+          />
+
+          <label for="telefone">Telefone</label>
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            autocomplete="tel"
+            inputmode="numeric"
+            placeholder="(11) 99999-9999"
+            maxlength="15"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Endereço</legend>
+
+          <label for="cep">CEP</label>
+          <input
+            type="text"
+            id="cep"
+            name="cep"
+            inputmode="numeric"
+            placeholder="00000-000"
+            maxlength="9"
+            autocomplete="postal-code"
+            required
+          />
+
+          <label for="endereco">Endereço</label>
+          <input
+            type="text"
+            id="endereco"
+            name="endereco"
+            autocomplete="street-address"
+            required
+          />
+
+          <label for="numero">Número</label>
+          <input
+            type="text"
+            id="numero"
+            name="numero"
+            inputmode="numeric"
+            required
+          />
+
+          <label for="complemento">Complemento</label>
+          <input
+            type="text"
+            id="complemento"
+            name="complemento"
+            placeholder="Apartamento, casa, bloco..."
+          />
+
+          <label for="cidade">Cidade</label>
+          <input
+            type="text"
+            id="cidade"
+            name="cidade"
+            autocomplete="address-level2"
+            required
+          />
+
+          <label for="estado">Estado</label>
+          <select
+            id="estado"
+            name="estado"
+            autocomplete="address-level1"
+            required
+          >
+            <option value="">Selecione seu estado</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Como você gostaria de participar?</legend>
+
+          <label>
+            <input type="checkbox" name="interesse" value="voluntariado" />
+            Voluntariado
+          </label>
+
+          <label>
+            <input type="checkbox" name="interesse" value="adocao" />
+            Adoção responsável
+          </label>
+
+          <label>
+            <input type="checkbox" name="interesse" value="doacao" />
+            Doação
+          </label>
+
+          <label>
+            <input type="checkbox" name="interesse" value="divulgacao" />
+            Divulgação das ações da Pata Viva
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Mensagem</legend>
+
+          <label for="mensagem">
+            Conte um pouco sobre como você gostaria de contribuir:
+          </label>
+
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            rows="5"
+            placeholder="Escreva sua mensagem..."
+          ></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Privacidade</legend>
+
+          <label>
+            <input
+              type="checkbox"
+              id="privacidade"
+              name="privacidade"
+              required
+            />
+            Concordo com o uso dos meus dados para fins relacionados às ações da
+            Pata Viva.
+          </label>
+        </fieldset>
+        <button type="submit">Enviar cadastro</button>
       </form>
     </main>
 
