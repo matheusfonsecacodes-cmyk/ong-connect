@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/*criação das variaveis locais utilizadas para padronização de elementos das páginas*/
+:root {
+
+    /*paleta de cores utilizadas na personalização das páginas*/
+
+    --verde-escuro: #355E3B; /*header, títulos fortes, elementos importantes*/
+    --verde: #588157; /*botões, destaques, elementos interativos*/
+    --verde-claro: #A3B18A; /*fundos suaves/detalhes*/
+
+    --marrom: #8B6F47; /*pequenos detalhes que remetem à terra/natureza*/
+
+    --bege: #F3EDE2; /*seções alternadas*/
+    --creme: #FAF8F3; /*fundo principal*/
+
+    --texto: #2F2F2F; /*texto normal*/
+    --texto-secundario: #5F5F5F; /*textos auxiliares*/
+
+    --branco: #FFFFFF; /*contraste*/
+
+    /*espaçamentos*/
+
+    --espaco-pequeno: 8px;
+    --espaco-medio: 16px;
+    --espaco-grande: 32px;
+    --espaco-secao: 48px;
+    --raio-pequeno: 6px;
+    --raio-medio: 10px;
+    --altura-header: 70px;
+
+    /*fontes*/
+
+    --titulos-fonte: "Trebuchet MS", sans-serif;
+--texto-fonte: Arial, sans-serif;
+}
