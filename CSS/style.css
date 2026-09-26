@@ -3,37 +3,163 @@
     margin: 0;
 }
 
-/*criação das variaveis locais utilizadas para padronização de elementos das páginas*/
+/* criação das variáveis utilizadas para padronização dos elementos das páginas */
+
 :root {
 
-    /*paleta de cores utilizadas na personalização das páginas*/
+    /* paleta de cores */
 
-    --verde-escuro: #355E3B; /*header, títulos fortes, elementos importantes*/
-    --verde: #588157; /*botões, destaques, elementos interativos*/
-    --verde-claro: #A3B18A; /*fundos suaves/detalhes*/
+    --verde-escuro: #355E3B;
+    --verde: #588157;
+    --verde-claro: #A3B18A;
+    --marrom: #8B6F47;
+    --bege: #F3EDE2;
+    --creme: #FAF8F3;
+    --texto: #2F2F2F;
+    --texto-secundario: #5F5F5F;
+    --branco: #FFFFFF;
 
-    --marrom: #8B6F47; /*pequenos detalhes que remetem à terra/natureza*/
+    /* espaçamentos */
 
-    --bege: #F3EDE2; /*seções alternadas*/
-    --creme: #FAF8F3; /*fundo principal*/
+    --espaco-pequeno: 0.8rem;
+    --espaco-medio: 1.6rem;
+    --espaco-grande: 3.2rem;
+    --espaco-secao: 4.8rem;
 
-    --texto: #2F2F2F; /*texto normal*/
-    --texto-secundario: #5F5F5F; /*textos auxiliares*/
+    /* bordas */
 
-    --branco: #FFFFFF; /*contraste*/
+    --raio-pequeno: 0.6rem;
+    --raio-medio: 1rem;
 
-    /*espaçamentos*/
+    /* altura */
 
-    --espaco-pequeno: 8px;
-    --espaco-medio: 16px;
-    --espaco-grande: 32px;
-    --espaco-secao: 48px;
-    --raio-pequeno: 6px;
-    --raio-medio: 10px;
-    --altura-header: 70px;
+    --altura-header: 7rem;
 
-    /*fontes*/
+    /* fontes */
 
     --titulos-fonte: "Trebuchet MS", sans-serif;
---texto-fonte: Arial, sans-serif;
+    --texto-fonte: Arial, sans-serif;
+}
+
+
+/* configuração geral */
+
+html {
+    background-color: var(--creme);
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--texto-fonte);
+    font-size: 1.6rem;
+    color: var(--texto);
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+
+    padding: var(--espaco-medio);
+}
+
+header h3 {
+    font-family: var(--titulos-fonte);
+    font-size: 3.2rem;
+
+    background: linear-gradient(
+        90deg,
+        var(--verde-claro),
+        var(--branco)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    transition: 0.3s ease;
+}
+
+header h3:hover {
+    background: linear-gradient(
+        90deg,
+        #F9C74F,
+        #F9844A
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    cursor: pointer;
+}
+
+header nav a {
+    display: inline-block;
+
+    text-decoration: none;
+    color: var(--branco);
+
+    background-color: var(--verde);
+
+    padding: 0.5rem;
+    margin: 0 1rem;
+
+    border-radius: var(--raio-medio);
+    border: 2px solid var(--verde-claro);
+
+    transition: transform 0.3s ease-in-out;
+}
+
+header nav a:hover {
+    transform: scale(1.1);
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+main {
+    padding: var(--espaco-secao) 0;
+}
+
+
+/* APRESENTAÇÃO */
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    margin: 0 auto;
+
+    gap: var(--espaco-grande);
+}
+
+section div {
+    width: 50%;
+}
+
+section img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--raio-medio);
+}
+
+section h1 {
+    font-family: var(--titulos-fonte);
+    font-size: 3.2rem;
+    color: var(--verde-escuro);
+    margin-bottom: var(--espaco-medio);
+}
+
+section p {
+    line-height: 1.6;
+    color: var(--texto-secundario);
 }
