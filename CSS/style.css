@@ -12,7 +12,7 @@
     --verde-escuro: #355E3B;
     --verde: #588157;
     --verde-claro: #A3B18A;
-    --marrom: #8B6F47;
+    --oliva: #6B705C;
     --bege: #F3EDE2;
     --creme: #FAF8F3;
     --texto: #2F2F2F;
@@ -118,48 +118,4 @@ header nav a {
 
 header nav a:hover {
     transform: scale(1.1);
-}
-
-
-/* CONTEÚDO PRINCIPAL */
-
-main {
-    padding: var(--espaco-secao) 0;
-}
-
-
-/* APRESENTAÇÃO */
-
-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 80%;
-    margin: 0 auto;
-
-    gap: var(--espaco-grande);
-}
-
-section div {
-    width: 50%;
-}
-
-section img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: var(--raio-medio);
-}
-
-section h1 {
-    font-family: var(--titulos-fonte);
-    font-size: 3.2rem;
-    color: var(--verde-escuro);
-    margin-bottom: var(--espaco-medio);
-}
-
-section p {
-    line-height: 1.6;
-    color: var(--texto-secundario);
 }
