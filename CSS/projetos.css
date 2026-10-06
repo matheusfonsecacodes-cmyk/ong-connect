@@ -1,68 +1,139 @@
-/* Estilos exclusivos da página de projetos */
+/* =========================
+   PÁGINA DE PROJETOS
+   ========================= */
 
 main {
-    padding: 40px 20px;
+    padding: var(--espaco-secao) 0;
 }
 
-section h1 {
+/* SEÇÕES */
+
+main > section {
+    width: 80%;
+    margin: 0 auto var(--espaco-secao);
+    padding: 2rem;
+}
+
+/* TÍTULOS */
+
+main h1,
+main h2,
+main h3 {
+    font-family: var(--titulos-fonte);
+    color: var(--verde-escuro);
+}
+
+main h1 {
+    font-size: 3.2rem;
+    margin-bottom: var(--espaco-medio);
     text-align: center;
-    margin-bottom: 20px;
 }
 
-section article {
-    margin-bottom: 30px;
-    padding: 20px;
+main h2 {
+    font-size: 2rem;
+    margin-bottom: var(--espaco-medio);
+    text-align: center;
 }
 
-section article {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
+main h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--espaco-pequeno);
 }
+
+/* TEXTOS */
+
+main p {
+    line-height: 1.6;
+    color: var(--texto-secundario);
+}
+
+/* =========================
+   PROJETOS
+   ========================= */
 
 section:has(article) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: var(--espaco-grande);
 }
 
 section:has(article) h2 {
     grid-column: 1 / -1;
 }
 
-section article h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+section article {
+    padding: 2rem;
+    background-color: var(--oliva);
+    border-radius: var(--raio-medio);
+    transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    section:has(article) {
-        grid-template-columns: 1fr;
-    }
+section article:hover {
+    transform: scale(1.03);
 }
+
+section article p {
+    color: var(--branco);
+}
+
+section article strong {
+    color: var(--branco);
+}
+
+/* =========================
+   LISTAS
+   ========================= */
 
 section ul {
-    padding-left: 20px;
+    padding-left: 1.5rem;
     line-height: 1.8;
 }
 
-section a {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 6px;
+section ul li {
+    margin-bottom: var(--espaco-pequeno);
+    color: var(--texto-secundario);
 }
 
-section p {
-    line-height: 1.6;
+/* =========================
+   BOTÕES
+   ========================= */
+
+section a {
+    display: block;
+    width: 50%;
+    margin: var(--espaco-medio) auto 0;
+    padding: 1.2rem 2rem;
+
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+
+    border: none;
+    border-radius: var(--raio-medio);
+
+    font-family: var(--titulos-fonte);
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 section a:hover {
-    opacity: 0.8;
+    background-color: var(--verde);
+    transform: translateY(-2px);
 }
 
+/* =========================
+   DOAÇÕES
+   ========================= */
+
 #doacoes {
-    margin-top: 40px;
+    background-color: var(--bege);
+    border-radius: var(--raio-medio);
 }
 
 #doacoes ul {
@@ -71,76 +142,90 @@ section a:hover {
 }
 
 #doacoes li {
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: var(--espaco-pequeno);
+    margin-bottom: var(--espaco-pequeno);
+
+    background-color: var(--branco);
+    border-radius: var(--raio-pequeno);
 }
 
-section ul li {
-    margin-bottom: 8px;
-}
-
-section ul li {
-    padding: 8px;
-}
-
-section ul li {
-    font-weight: 500;
-}
-
-section:nth-of-type(4) {
-    margin-top: 40px;
-}
-
-section figure {
-    margin: 0;
-}
+/* =========================
+   GALERIA
+   ========================= */
 
 section:has(figure) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: var(--espaco-grande);
 }
 
 section:has(figure) h2 {
     grid-column: 1 / -1;
 }
 
-section:has(figure) img {
+section figure {
+    margin: 0;
+}
+
+section figure img {
+    display: block;
     width: 100%;
     height: 250px;
+
     object-fit: contain;
-    border-radius: 8px;
-    background-color: transparent;
+
+    border-radius: var(--raio-medio);
 }
 
-section:has(figure) figcaption {
+section figcaption {
+    margin-top: 10px;
+    padding: 10px;
+
+    background-color: var(--bege);
+    border-radius: var(--raio-pequeno);
+
     text-align: center;
+    line-height: 1.4;
+
+    color: var(--verde-escuro);
+    font-family: var(--titulos-fonte);
+    font-weight: bold;
+
+    transition: transform 0.2s ease;
 }
 
-main > section {
-    margin-bottom: 40px;
+section figure:hover figcaption {
+    transform: translateY(-2px);
 }
 
-main h2 {
-    margin-bottom: 10px;
-}
-
-main h3 {
-    margin-bottom: 8px;
-}
-
-section:has(article) article {
-    padding: 20px;
-}
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
 
 @media (max-width: 768px) {
+
+    main {
+        padding: var(--espaco-secao) 0;
+    }
+
+    main > section {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    main h1 {
+        font-size: 2.4rem;
+    }
+
     section:has(article) {
         grid-template-columns: 1fr;
     }
 
     section:has(figure) {
         grid-template-columns: 1fr;
+    }
+
+    section a {
+        width: 80%;
     }
 }
