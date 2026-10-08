@@ -1,16 +1,14 @@
+/* ========================================
+   RESET E CONFIGURAÇÕES GERAIS
+======================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
-/* ==============================
-   VARIÁVEIS
-============================== */
-
 :root {
-
-    /* paleta de cores */
-
+    /* Paleta de cores */
     --verde-escuro: #355E3B;
     --verde: #588157;
     --verde-claro: #A3B18A;
@@ -21,32 +19,27 @@
     --texto-secundario: #5F5F5F;
     --branco: #FFFFFF;
 
-    /* espaçamentos */
-
+    /* Espaçamentos */
     --espaco-pequeno: 0.8rem;
     --espaco-medio: 1.6rem;
     --espaco-grande: 3.2rem;
     --espaco-secao: 4.8rem;
 
-    /* bordas */
-
+    /* Bordas */
     --raio-pequeno: 0.6rem;
     --raio-medio: 1rem;
 
-    /* altura */
-
+    /* Altura */
     --altura-header: 7rem;
 
-    /* fontes */
-
+    /* Fontes */
     --titulos-fonte: "Trebuchet MS", sans-serif;
     --texto-fonte: Arial, sans-serif;
 }
 
-
-/* ==============================
-   CONFIGURAÇÃO GERAL
-============================== */
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
 
 html {
     background-color: var(--creme);
@@ -64,14 +57,6 @@ body {
 
 main {
     width: 100%;
-}
-
-section {
-    padding: var(--espaco-secao) 10%;
-}
-
-section:nth-child(even) {
-    background-color: var(--bege);
 }
 
 h1,
@@ -95,42 +80,34 @@ p {
     color: var(--texto-secundario);
 }
 
-
-/* ==============================
-   HEADER
-============================== */
+/* ========================================
+   CABEÇALHO E NAVEGAÇÃO
+======================================== */
 
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
     background-color: var(--verde-escuro);
     color: var(--branco);
-
     padding: var(--espaco-medio) 8%;
-
     position: sticky;
     top: 0;
     z-index: 1000;
-
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 header h3 {
     font-family: var(--titulos-fonte);
     font-size: 3.2rem;
-
     background: linear-gradient(
         90deg,
         var(--verde-claro),
         var(--branco)
     );
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     transition: 0.3s ease;
 }
 
@@ -140,10 +117,8 @@ header h3:hover {
         #F9C74F,
         #F9844A
     );
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     cursor: pointer;
 }
 
@@ -155,18 +130,13 @@ header nav {
 
 header nav a {
     display: inline-block;
-
     text-decoration: none;
     color: var(--branco);
-
     background-color: var(--verde);
-
     padding: 0.8rem 1.4rem;
     margin: 0 0.3rem;
-
     border-radius: var(--raio-medio);
     border: 2px solid var(--verde-claro);
-
     transition: all 0.3s ease-in-out;
 }
 
@@ -176,419 +146,41 @@ header nav a:hover {
     transform: translateY(-2px);
 }
 
-
-/* ==============================
-   SEÇÃO INICIAL
-============================== */
-
-#inicio {
-    min-height: 65rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    color: var(--branco);
-
-    background:
-        linear-gradient(
-            rgba(53, 94, 59, 0.82),
-            rgba(53, 94, 59, 0.82)
-        ),
-        url("../img/cachorro.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    padding: 8rem 10%;
-}
-
-#inicio h1 {
-    font-size: 5rem;
-    color: var(--branco);
-
-    max-width: 90rem;
-
-    margin-bottom: var(--espaco-medio);
-}
-
-#inicio p {
-    color: var(--branco);
-
-    max-width: 75rem;
-
-    font-size: 1.9rem;
-
-    margin-bottom: var(--espaco-grande);
-}
-
-
-/* ==============================
-   BOTÕES DA HOME
-============================== */
-
-#inicio a,
-#ajudar a {
-    display: inline-block;
-
-    text-decoration: none;
-
-    padding: 1.2rem 2.2rem;
-
-    margin: 0.5rem;
-
-    border-radius: var(--raio-medio);
-
-    font-weight: bold;
-
-    transition: all 0.3s ease;
-}
-
-#inicio a {
-    color: var(--verde-escuro);
-    background-color: var(--branco);
-
-    border: 2px solid var(--branco);
-}
-
-#inicio a:hover {
-    background-color: var(--verde-claro);
-    border-color: var(--verde-claro);
-
-    transform: translateY(-3px);
-}
-
-#inicio a:last-child {
-    color: var(--branco);
-    background-color: transparent;
-
-    border: 2px solid var(--verde-claro);
-}
-
-#inicio a:last-child:hover {
-    background-color: var(--verde-claro);
-    color: var(--verde-escuro);
-}
-
-
-/* ==============================
-   QUEM SOMOS
-============================== */
-
-#sobre {
-    text-align: center;
-}
-
-#sobre p {
-    max-width: 85rem;
-    margin: 0 auto 2rem;
-}
-
-
-/* ==============================
-   NOSSA HISTÓRIA
-============================== */
-
-#historia {
-    text-align: center;
-}
-
-#historia p {
-    max-width: 85rem;
-    margin: 0 auto 2rem;
-}
-
-
-/* ==============================
-   IMPACTO
-============================== */
-
-#impacto {
-    display: flex;
-    flex-wrap: wrap;
-
-    justify-content: center;
-
-    gap: 2rem;
-
-    text-align: center;
-}
-
-#impacto h2 {
-    width: 100%;
-}
-
-#impacto > div {
-    width: 22rem;
-
-    padding: 2.5rem 1.5rem;
-
-    background-color: var(--branco);
-
-    border-radius: var(--raio-medio);
-
-    border-top: 5px solid var(--verde);
-
-    box-shadow: 0 4px 12px rgba(53, 94, 59, 0.12);
-
-    transition: all 0.3s ease;
-}
-
-#impacto > div:hover {
-    transform: translateY(-7px);
-
-    box-shadow: 0 8px 20px rgba(53, 94, 59, 0.2);
-
-    border-top-color: var(--verde-claro);
-}
-
-#impacto > div h3 {
-    font-family: var(--titulos-fonte);
-
-    font-size: 3.6rem;
-
-    color: var(--verde-escuro);
-
-    margin-bottom: 0.5rem;
-}
-
-#impacto > div p {
-    font-size: 1.4rem;
-    margin: 0;
-}
-
-#impacto > p {
-    width: 100%;
-    max-width: 75rem;
-
-    margin-top: 1.5rem;
-}
-
-
-/* ==============================
-   O QUE NOS MOVE
-============================== */
-
-#valores {
-    text-align: center;
-}
-
-#valores h3 {
-    font-size: 2.2rem;
-
-    margin-top: 2.5rem;
-    margin-bottom: 0.8rem;
-
-    color: var(--verde-escuro);
-}
-
-#valores p {
-    max-width: 80rem;
-
-    margin: 0 auto 2rem;
-}
-
-
-/* ==============================
-   PROJETOS
-============================== */
-
-#projetos {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 2.5rem;
-}
-
-#projetos h2 {
-    grid-column: 1 / -1;
-}
-
-#projetos article {
-    background-color: var(--branco);
-
-    padding: 2.8rem;
-
-    border-radius: var(--raio-medio);
-
-    border-left: 5px solid var(--verde);
-
-    box-shadow: 0 4px 12px rgba(53, 94, 59, 0.1);
-
-    transition: all 0.3s ease;
-}
-
-#projetos article:hover {
-    transform: translateY(-5px);
-
-    border-left-color: var(--verde-claro);
-
-    box-shadow: 0 8px 20px rgba(53, 94, 59, 0.18);
-}
-
-#projetos article h3 {
-    font-size: 2.2rem;
-
-    color: var(--verde-escuro);
-
-    margin-bottom: 1rem;
-}
-
-#projetos article p {
-    margin: 0;
-}
-
-
-/* ==============================
-   TRANSPARÊNCIA
-============================== */
-
-#transparencia {
-    text-align: center;
-}
-
-#transparencia p {
-    max-width: 80rem;
-
-    margin: 0 auto 2rem;
-}
-
-
-/* ==============================
-   COMO AJUDAR
-============================== */
-
-#ajudar {
-    text-align: center;
-
-    background-color: var(--verde) !important;
-}
-
-#ajudar h2 {
-    color: var(--branco);
-}
-
-#ajudar p {
-    color: var(--branco);
-
-    max-width: 75rem;
-
-    margin: 0 auto 2.5rem;
-}
-
-#ajudar a {
-    color: var(--verde-escuro);
-
-    background-color: var(--branco);
-
-    border: 2px solid var(--branco);
-}
-
-#ajudar a:hover {
-    color: var(--branco);
-
-    background-color: var(--verde-escuro);
-
-    border-color: var(--verde-escuro);
-
-    transform: translateY(-3px);
-}
-
-
-/* ==============================
-   CONTATO
-============================== */
-
-#contato {
-    text-align: center;
-}
-
-#contato p {
-    max-width: 70rem;
-
-    margin: 0 auto 1.5rem;
-}
-
-#contato strong {
-    color: var(--verde-escuro);
-}
-
-#contato a {
-    color: var(--verde);
-
-    font-weight: bold;
-
-    text-decoration: none;
-}
-
-#contato a:hover {
-    color: var(--verde-escuro);
-
-    text-decoration: underline;
-}
-
-#contato h3 {
-    margin-top: 3rem;
-
-    margin-bottom: 1rem;
-
-    color: var(--verde-escuro);
-}
-
-
-/* ==============================
-   FOOTER
-============================== */
+/* ========================================
+   RODAPÉ COMPARTILHADO
+======================================== */
 
 footer {
     background-color: var(--verde-escuro);
-
     color: var(--branco);
-
     text-align: center;
-
     padding: 4rem 10%;
 }
 
 footer h3 {
     font-family: var(--titulos-fonte);
-
     font-size: 2.4rem;
-
     color: var(--branco);
-
     margin-bottom: 1rem;
 }
 
 footer p {
     color: var(--verde-claro);
-
     margin-bottom: 2rem;
 }
 
 footer nav {
     display: flex;
-
     justify-content: center;
-
     flex-wrap: wrap;
-
     gap: 2rem;
-
     margin-bottom: 2.5rem;
 }
 
 footer nav a {
     color: var(--branco);
-
     text-decoration: none;
-
     font-weight: bold;
-
     transition: 0.3s ease;
 }
 
@@ -596,65 +188,28 @@ footer nav a:hover {
     color: var(--verde-claro);
 }
 
-
-/* ==============================
-   RESPONSIVIDADE
-============================== */
+/* ========================================
+   RESPONSIVIDADE GLOBAL
+======================================== */
 
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
-
         gap: 1.5rem;
-
         padding: 1.5rem 5%;
     }
 
     header nav {
         flex-wrap: wrap;
-
         justify-content: center;
     }
 
     header nav a {
         margin: 0.3rem;
     }
-
-    #inicio {
-        min-height: 55rem;
-
-        padding: 6rem 5%;
-    }
-
-    #inicio h1 {
-        font-size: 3.8rem;
-    }
-
-    #inicio p {
-        font-size: 1.7rem;
-    }
-
-    section {
-        padding: 4rem 7%;
-    }
-
-    section h2 {
-        font-size: 2.8rem;
-    }
-
-    #projetos {
-        grid-template-columns: 1fr;
-    }
-
-    #impacto > div {
-        width: 45%;
-    }
 }
 
-
 @media (max-width: 480px) {
-
     html {
         font-size: 58%;
     }
@@ -669,37 +224,11 @@ footer nav a:hover {
 
     header nav a {
         padding: 0.6rem 0.9rem;
-
         font-size: 1.4rem;
-    }
-
-    #inicio {
-        min-height: 52rem;
-    }
-
-    #inicio h1 {
-        font-size: 3.2rem;
-    }
-
-    #inicio p {
-        font-size: 1.6rem;
-    }
-
-    #inicio a {
-        width: 100%;
-
-        max-width: 28rem;
-    }
-
-    #impacto > div {
-        width: 100%;
-
-        max-width: 30rem;
     }
 
     footer nav {
         flex-direction: column;
-
         gap: 1rem;
     }
 }
