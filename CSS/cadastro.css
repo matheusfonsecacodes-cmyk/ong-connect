@@ -1,17 +1,23 @@
+
+/* ========================================
+   ESTRUTURA GERAL
+======================================== */
+
 main {
     padding: var(--espaco-secao) 0;
 }
 
-/* APRESENTAÇÃO */
+/* ========================================
+   APRESENTAÇÃO DA PÁGINA
+======================================== */
 
 section {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto var(--espaco-secao);
     gap: var(--espaco-grande);
-    margin-bottom: var(--espaco-secao);
 }
 
 section div {
@@ -37,60 +43,102 @@ section p {
     color: var(--texto-secundario);
 }
 
-/* FORMULÁRIO */
+/* ========================================
+   FORMULÁRIO
+======================================== */
 
 fieldset {
     position: relative;
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: auto;
-    margin: 0 auto;
-    background-color: var(--oliva);
-    border-radius: var(--raio-medio);
-    border: none;
-    margin-bottom: var(--espaco-secao);
+    margin: 0 auto var(--espaco-secao);
     padding: 2rem;
+
+    background-color: var(--oliva);
+    border: none;
+    border-radius: var(--raio-medio);
+
     transition: transform 0.3s ease;
 }
 
 legend {
     position: absolute;
-    margin: -4.5rem;
-    margin-left: 2rem;
+    margin: -4.5rem 0 0 2rem;
     font-family: var(--titulos-fonte);
     font-size: 2rem;
 }
 
+/* Efeito de destaque ao passar o mouse */
+
 fieldset:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 fieldset label {
     color: var(--branco);
 }
 
-fieldset input {
-    background-color: var(--bege);
-    border: none;
-    border-radius: var(--raio-pequeno);
+/* Campos de texto, seleção e mensagem */
+
+fieldset input:not([type="checkbox"]),
+fieldset select,
+fieldset textarea {
+    width: 100%;
+    max-width: 100%;
     padding: var(--espaco-pequeno);
+
+    background-color: var(--bege);
+    color: var(--texto);
+
+    border: 2px solid transparent;
+    border-radius: var(--raio-pequeno);
+
+    font: inherit;
 }
 
-input:focus {
+fieldset select,
+fieldset textarea {
+    margin-bottom: var(--espaco-pequeno);
+}
+
+fieldset textarea {
+    resize: vertical;
+}
+
+/* Placeholder */
+
+fieldset input::placeholder,
+fieldset textarea::placeholder {
+    color: var(--texto-secundario);
+}
+
+/* Foco visível para navegação por teclado */
+
+fieldset input:focus,
+fieldset select:focus,
+fieldset textarea:focus {
     outline: 2px solid var(--verde-claro);
     outline-offset: 2px;
 }
 
-input:focus:valid {
+/* Indicação visual de validade */
+
+fieldset input:not([type="checkbox"]):focus:valid,
+fieldset select:focus:valid,
+fieldset textarea:focus:valid {
     border-bottom: 2px solid var(--verde);
 }
 
-input:focus:invalid {
+fieldset input:not([type="checkbox"]):focus:invalid,
+fieldset select:focus:invalid,
+fieldset textarea:focus:invalid {
     border-bottom: 2px solid red;
 }
 
-/* CHECKBOX */
+/* ========================================
+   CHECKBOXES PERSONALIZADOS
+======================================== */
 
 .checkbox {
     position: relative;
@@ -98,58 +146,91 @@ input:focus:invalid {
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 1rem;
+    line-height: 1.5;
 }
+
+/* Aparência do quadradinho */
 
 .checkbox input[type="checkbox"] {
     appearance: none;
+    flex: 0 0 2rem;
     width: 2rem;
     height: 2rem;
     padding: 0;
-    margin: 0;
+    margin: 0.1rem 0 0;
+
     border: 2px solid var(--verde-escuro);
     border-radius: 0.4rem;
     background-color: var(--branco);
+
     cursor: pointer;
 }
+
+/* Estado marcado */
 
 .checkbox input[type="checkbox"]:checked {
     background-color: var(--verde-escuro);
     border-color: var(--verde-escuro);
 }
 
+/* Desenho do símbolo de confirmação */
+
 .checkbox::after {
     content: "";
     position: absolute;
     left: 0.65rem;
     top: 0.45rem;
+
     width: 0.6rem;
     height: 1.1rem;
+
     border-right: 0.3rem solid var(--branco);
     border-bottom: 0.3rem solid var(--branco);
+
     transform: rotate(45deg) scale(0);
     transition: transform 0.2s ease;
+
+    pointer-events: none;
 }
+
+/* Exibe o símbolo quando marcado */
 
 .checkbox:has(input:checked)::after {
     transform: rotate(45deg) scale(1);
 }
 
-/* BOTÃO */
+/* Foco acessível no checkbox */
+
+.checkbox input[type="checkbox"]:focus-visible {
+    outline: 2px solid var(--verde-claro);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   BOTÃO DE ENVIO
+======================================== */
 
 button[type="submit"] {
     display: block;
     width: 50%;
     margin: 0 auto;
     padding: 1.4rem 2.4rem;
+
     background-color: var(--verde-escuro);
     color: var(--branco);
+
     border: none;
     border-radius: var(--raio-medio);
+
     font-family: var(--titulos-fonte);
     font-size: 1.8rem;
     font-weight: bold;
+
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
 }
 
 button[type="submit"]:hover {
@@ -161,7 +242,123 @@ button[type="submit"]:active {
     transform: translateY(0);
 }
 
-button[type="submit"]:focus {
+button[type="submit"]:focus-visible {
     outline: 2px solid var(--verde-claro);
     outline-offset: 3px;
+}
+
+/* ========================================
+   RESPONSIVIDADE — TABLETS
+   Até 768px
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* Reduz os espaços externos */
+
+    main {
+        padding: var(--espaco-grande) 0;
+    }
+
+    /* Apresentação mais compacta */
+
+    section {
+        width: 90%;
+        gap: var(--espaco-medio);
+    }
+
+    section h1 {
+        font-size: 2.8rem;
+    }
+
+    /* Formulário mais largo */
+
+    fieldset {
+        width: 75%;
+    }
+
+    /* Evita que o efeito de zoom atrapalhe o layout */
+
+    fieldset:hover {
+        transform: none;
+    }
+
+    /* Botão com maior área de clique */
+
+    button[type="submit"] {
+        width: 75%;
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE — CELULARES
+   Até 480px
+======================================== */
+
+@media (max-width: 480px) {
+
+    /* Ajusta os espaços da página */
+
+    main {
+        padding: 2.4rem 0;
+    }
+
+    /* Empilha a imagem e o texto */
+
+    section {
+        flex-direction: column;
+        align-items: stretch;
+        width: 90%;
+        gap: var(--espaco-medio);
+        margin-bottom: 5rem;
+    }
+
+    section div {
+        width: 100%;
+    }
+
+    section h1 {
+        font-size: 2.6rem;
+    }
+
+    section p {
+        font-size: 1.5rem;
+    }
+
+    /* Formulário ocupa quase toda a tela */
+
+    fieldset {
+        width: 90%;
+        padding: 1.6rem;
+        margin-bottom: 5rem;
+    }
+
+    /* Legendas menores para caber em telas estreitas */
+
+    legend {
+        max-width: calc(100% - 2rem);
+        margin: -3.8rem 0 0 1rem;
+        font-size: 1.7rem;
+    }
+
+    /* Evita que os textos dos checkboxes fiquem apertados */
+
+    .checkbox {
+        gap: 0.8rem;
+        font-size: 1.4rem;
+    }
+
+    /* Botão ocupa a largura disponível */
+
+    button[type="submit"] {
+        width: 90%;
+        padding: 1.4rem 1rem;
+        font-size: 1.7rem;
+    }
+
+    /* Remove animações de escala em telas pequenas */
+
+    fieldset:hover {
+        transform: none;
+    }
 }
