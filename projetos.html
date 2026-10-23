@@ -157,10 +157,10 @@
           <li>Outro valor — escolha quanto deseja contribuir</li>
         </ul>
 
-        <p>
-          Os valores e dados apresentados nesta página são demonstrativos para
-          fins do projeto acadêmico.
-        </p>
+        <div class="alerta">
+  Os valores e dados apresentados nesta página são demonstrativos para
+  fins do projeto acadêmico.
+  </div>
       </section>
 
       <!-- TRANSPARÊNCIA -->
@@ -249,10 +249,26 @@
 
         <a href="cadastro.html">Quero ser voluntário</a>
 
-        <a href="#doacoes">Quero ajudar</a>
+        <a href="#doacoes" id="btn-ajudar">Quero ajudar</a>
 
         <a href="index.html">Conhecer a Pata Viva</a>
       </section>
-    </main>
+      </main>
+
+    <div class="toast">
+    Ação realizada com sucesso!
+</div>
+
+<div class="modal" id="modal-projeto">
+    <div class="modal-conteudo">
+        <button class="modal-fechar" type="button">&times;</button>
+        <h2>Quer fazer parte da Pata Viva?</h2>
+        <p>
+            Você pode ajudar através de doações ou voluntariado.
+        </p>
+        <a href="cadastro.html">Quero participar</a>
+    </div>
+</div>
+<script src="JS/projetos.js"></script>
   </body>
 </html>
